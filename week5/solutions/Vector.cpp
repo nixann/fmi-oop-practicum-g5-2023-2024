@@ -28,6 +28,10 @@ void Vector::push_back(const int value) {
 }
 
 void Vector::pop_back() {
+  if (this->number_of_elements == 0) {
+    return;
+  }
+
   this->number_of_elements--;
 
   if (this->number_of_elements * 2 <= this->capacity) {
@@ -63,6 +67,10 @@ void Vector::insert_at(unsigned index, const int value) {
 void Vector::delete_at(unsigned index) {
   if (index >= this->number_of_elements) {
     throw "Invalid index";
+  }
+
+  if (this->number_of_elements == 0) {
+    return;
   }
 
   for (int i = index; i < this->number_of_elements - 1; i++) {
