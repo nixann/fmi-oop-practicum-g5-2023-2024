@@ -112,6 +112,8 @@ bool Library::remove(int identifier) {
     return false;
   }
 
+  delete this->items[item_index];
+
   for (int i = item_index; i < this->items_count - 1; i++) {
     this->items[i] = this->items[i + 1];
   }
